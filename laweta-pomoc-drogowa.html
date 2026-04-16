@@ -51,17 +51,13 @@
 }
 </script>
     <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="critical.css">
+<style type="text/css">:root{--primary-color:#ff9800;--secondary-color:#0b132b;--accent-color:#1c2541;--text-light:#ffffff;--text-dark:#333333;--bg-dark:#0b132b;--bg-light:#f4f4f4;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Montserrat',sans-serif;line-height:1.6;color:var(--text-light);background-color:var(--bg-dark);overflow-x:hidden;}h1,h2,h3,h4{font-family:'Oswald',sans-serif;text-transform:uppercase;}.container{max-width:1200px;margin:0 auto;padding:0 20px;}header{background-color:#0b132b;position:sticky;top:0;z-index:2000;box-shadow:0 10px 30px rgba(0,0,0,0.5);transition:padding 0.3s ease,background 0.3s ease;will-change:padding,background;padding:15px 0;}header.scrolled{padding:5px 0;background:rgba(11,19,43,0.95);}.top-bar .container{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:auto;max-width:100%;padding:15px 20px;}.logo{flex:0 1 auto;display:flex;justify-content:flex-start;}.logo img{max-height:60px;width:auto;display:block;transition:transform 0.3s ease;filter:drop-shadow(0 0 10px rgba(0,0,0,0.5));}nav{display:flex;align-items:center;justify-content:center;flex:0 0 auto;}nav ul{display:flex;list-style:none;gap:5px;}nav a{text-decoration:none;color:var(--text-light);font-weight:700;font-size:0.85rem;padding:8px 10px;transition:all 0.3s ease;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;}.header-cta{display:flex;flex-direction:row;justify-content:flex-end;align-items:center;gap:10px;}.mobile-only{display:none;}.header-cta .btn-call{display:flex;align-items:center;gap:6px;text-decoration:none;color:#fff;background:#ff9800;padding:6px 10px;transition:background 0.3s;font-family:'Oswald',sans-serif;font-weight:700;border-radius:5px;line-height:1;white-space:nowrap;}.btn-label{display:block;font-size:0.7rem;text-transform:uppercase;opacity:0.9;}.btn-number{display:block;font-size:1rem;}.menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;width:45px;height:45px;background:rgba(255,152,0,0.1);border:1px solid var(--primary-color);border-radius:10px;cursor:pointer;padding:0;z-index:2200;}.menu-toggle span{width:26px;height:2px;background:var(--primary-color);border-radius:2px;position:absolute;}.hero{background:linear-gradient(rgba(11,19,43,0.8),rgba(11,19,43,0.8)),url('tlo.webp');background-size:cover;background-position:center;padding:80px 0;min-height:800px;display:flex;align-items:stretch;justify-content:center;}.hero .container{display:flex;flex-direction:column;}.hero-content{display:flex;flex-direction:column;align-items:center;width:100%;height:100%;}.hero-text{width:100%;display:flex;flex-direction:column;align-items:center;min-height:400px;}.hero-text h2{font-size:clamp(1.8rem,8vw,4.5rem);color:var(--text-light);line-height:1.1;width:100%;text-shadow:3px 3px 10px rgba(0,0,0,0.9);text-align:center;margin-bottom:clamp(20px,5vh,40px);white-space:normal;word-wrap:break-word;letter-spacing:1px;min-height:1.1em;}.hero-text h2 .highlight{color:var(--primary-color);font-style:italic;font-weight:900;}.hero-cta-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-bottom:40px;}.btn-hero-call{display:flex;align-items:center;background:var(--primary-color);color:white;padding:15px 25px;text-decoration:none;font-weight:700;font-family:'Oswald',sans-serif;border-radius:5px;transition:background 0.3s;line-height:1.1;text-align:left;}.btn-hero-call i{font-size:2rem;margin-right:15px;}.btn-hero-call .btn-label{font-size:1rem;}.btn-hero-call .btn-number{font-size:1.8rem;}.page-header{padding:clamp(40px,10vw,80px) 0;text-align:center;color:white;}.page-header h2{font-size:clamp(2rem,8vw,3.5rem);margin-bottom:10px;}.page-header p{font-size:1.2rem;color:var(--primary-color);}@media (max-width:1100px){.menu-toggle{display:flex;order:3;}nav{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(11,19,43,0.98);padding:120px 20px 40px;flex-direction:column;transition:all 0.5s cubic-bezier(0.7,0,0.3,1);z-index:2100;display:flex;justify-content:flex-start;align-items:center;transform:translateY(-100%);visibility:hidden;}nav.active{transform:translateY(0);visibility:visible;}.top-bar .container{padding:10px 15px;display:flex;justify-content:space-between;}.desktop-only{display:none;}.mobile-only{display:flex;}nav a{font-size:1.25rem;font-family:'Oswald',sans-serif;display:block;padding:12px 0;letter-spacing:2px;color:white;text-transform:uppercase;position:relative;border-bottom:1px solid rgba(255,255,255,0.05);}nav .header-cta{display:flex;flex-direction:column;gap:15px;margin-top:40px;width:100%;max-width:360px;}nav .header-cta .btn-call{padding:15px 25px;width:100%;justify-content:center;}nav .header-cta .btn-label{font-size:1.1rem;}nav .header-cta .btn-number{font-size:1.8rem;}.header-cta{display:none;}.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;opacity:0;visibility:hidden;transition:all 0.4s ease;}.overlay.active{opacity:1;visibility:visible;}}@media (max-width:768px){.logo img{max-height:50px;}.hero{padding:40px 0;min-height:600px;}.hero-text h2{font-size:2.4rem;}.hero-cta-buttons{flex-direction:column;align-items:center;}.btn-hero-call{width:100%;max-width:320px;}}/* Custom Slider & AOS (added to critical for better LCP/CLS) */.custom-slider{position:relative;width:100%;overflow:hidden;}.slider-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;}.slider-track::-webkit-scrollbar{display:none;}.slider-item{flex:0 0 100%;scroll-snap-align:start;padding:10px;}@media (min-width:768px){.slider-item{flex:0 0 50%;}}@media (min-width:1024px){.slider-item{flex:0 0 33.333%;}}[data-aos-custom]{opacity:0;transition:transform 0.8s ease-out,opacity 0.8s ease-out;will-change:transform,opacity;}[data-aos-custom="fade-up"]{transform:translateY(30px);}[data-aos-custom="fade-right"]{transform:translateX(-30px);}[data-aos-custom="fade-left"]{transform:translateX(30px);}[data-aos-custom="zoom-in"]{transform:scale(0.9);}[data-aos-custom].aos-animate{opacity:1;transform:translate(0,0) scale(1);}</style>
     <noscript><link rel="stylesheet" href="style.css"></noscript>
     <link rel="preload" as="style" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="font-awesome.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="font-awesome.min.css"></noscript>
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- NOWE -->
     <link rel="preload" as="image" href="tlo.webp" fetchpriority="high" type="image/webp">
 
@@ -83,7 +79,7 @@
             <div class="container">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="logo.webp" alt="Pomoc Drogowa Częstochowa DAWDAN-CARS" width="349" height="60">
+                        <img src="logo.webp" fetchpriority="high" alt="Pomoc Drogowa Częstochowa DAWDAN-CARS" width="349" height="60">
                     </a>
                 </div>
                 <nav>
@@ -96,14 +92,14 @@
                     </ul>
                     <div class="header-cta mobile-only">
                         <a href="tel:+48730035559" class="btn-call">
-                            <i class="fas fa-phone-alt"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
                             <span>
                                 <span class="btn-label">SKUP SAMOCHODÓW</span>
                                 <span class="btn-number">730 035 559</span>
                             </span>
                         </a>
                         <a href="tel:+48790676446" class="btn-call">
-                            <i class="fas fa-phone-alt"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
                             <span>
                                 <span class="btn-label">POMOC DROGOWA</span>
                                 <span class="btn-number">790 676 446</span>
@@ -113,14 +109,14 @@
                 </nav>
                 <div class="header-cta desktop-only">
                     <a href="tel:+48730035559" class="btn-call">
-                        <i class="fas fa-phone-alt"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
                         <span>
                             <span class="btn-label">SKUP SAMOCHODÓW</span>
                             <span class="btn-number">730 035 559</span>
                         </span>
                     </a>
                     <a href="tel:+48790676446" class="btn-call">
-                        <i class="fas fa-phone-alt"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
                         <span>
                             <span class="btn-label">POMOC DROGOWA</span>
                             <span class="btn-number">790 676 446</span>
@@ -147,7 +143,7 @@
     <section class="tow-details">
         <div class="container">
             <div class="tow-grid">
-                <div class="tow-info" data-aos="fade-right">
+                <div class="tow-info" data-aos-custom="fade-right">
                     <h2>Najszybsza pomoc drogowa i laweta w Częstochowie</h2>
                     <p>Potrzebna Ci profesjonalna <strong>pomoc drogowa Częstochowa</strong>? Twoje auto uległo awarii lub brałeś udział w kolizji? DAWDAN-CARS to zespół specjalistów dostępny 24 godziny na dobę, 7 dni w tygodniu. Nasza <strong>laweta Częstochowa</strong> dotrze do Ciebie w rekordowo krótkim czasie, niezależnie od lokalizacji. Oferujemy kompleksowe wsparcie w każdej sytuacji na drodze.</p>
 
@@ -170,23 +166,23 @@
                     <p>Działamy na terenie miast: <strong>Częstochowa</strong>, Blachownia, Kłobuck, Myszków, Radomsko oraz na trasach DK1, A1, S8 i drogach lokalnych całego województwa śląskiego. Nasza <strong>pomoc drogowa</strong> to gwarancja spokoju w trudnej sytuacji.</p>
                 </div>
                 <div class="tow-services-grid">
-                        <div class="tow-service-item" data-aos="zoom-in" data-aos-delay="100">
-                            <i class="fas fa-truck-moving"></i>
+                        <div class="tow-service-item" data-aos-custom="zoom-in" data-aos-delay="100">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="20" height="20" fill="currentColor"><path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"/></svg>
                             <h4>Usługi Lawetą 24h</h4>
                             <p>Szybki i bezpieczny transport pojazdów.</p>
                         </div>
-                        <div class="tow-service-item" data-aos="zoom-in" data-aos-delay="200">
-                            <i class="fas fa-battery-full"></i>
+                        <div class="tow-service-item" data-aos-custom="zoom-in" data-aos-delay="200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20" height="20" fill="currentColor"><path d="M464 160c8.8 0 16 7.2 16 16v160c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h416zm48 64h16c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32h-16v-96zm-496-96C7.2 128 0 135.2 0 144v224c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H16zM64 192v128h384V192H64z"/></svg>
                             <h4>Odpalanie Samochodów</h4>
                             <p>Pomoc przy rozładowanym akumulatorze.</p>
                         </div>
-                        <div class="tow-service-item" data-aos="zoom-in" data-aos-delay="300">
-                            <i class="fas fa-gas-pump"></i>
+                        <div class="tow-service-item" data-aos-custom="zoom-in" data-aos-delay="300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M336 448H16c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h320c8.8 0 16 7.2 16 16v320c0 8.8-7.2 16-16 16zM48 160v128h256V160H48zm400 32c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48s48-21.5 48-48V240c0-26.5-21.5-48-48-48zm48-32v-32c0-17.7-14.3-32-32-32h-32c-17.7 0-32 14.3-32 32v32h96z"/></svg>
                             <h4>Dowóz Paliwa</h4>
                             <p>Paliwo prosto na miejsce Twojego postoju.</p>
                         </div>
-                        <div class="tow-service-item" data-aos="zoom-in" data-aos-delay="400">
-                            <i class="fas fa-wrench"></i>
+                        <div class="tow-service-item" data-aos-custom="zoom-in" data-aos-delay="400">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l-94.5-15.4-15.4-94.5L282.3 0c-21.9-21.9-57.3-21.9-79.2 0L21.7 201.7c-21.9 21.9-21.9 57.3 0 79.2l181.4 181.4c21.9 21.9 57.3 21.9 79.2 0l181.4-181.4c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-290.2 290.2c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3 32.8-12.5 45.3 0 12.5 32.8 0 45.3z"/></svg>
                             <h4>Pomoc Drogowa</h4>
                             <p>Kompleksowe wsparcie w każdej sytuacji.</p>
                         </div>
@@ -199,9 +195,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Częstochowa, Śląsk i okolice</p>
-                    <p><i class="fas fa-phone"></i> Skup samochodów: 730 035 559</p>
-                    <p><i class="fas fa-phone"></i> Pomoc Drogowa: 790 676 446</p>
+                    <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20" height="20" fill="currentColor"><path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/></svg> Częstochowa, Śląsk i okolice</p>
+                    <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg> Skup samochodów: 730 035 559</p>
+                    <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg> Pomoc Drogowa: 790 676 446</p>
                 </div>
                 <div class="footer-links">
                     <ul>
@@ -211,7 +207,7 @@
                 </div>
                 <div class="footer-hours">
                     <div class="hours-box">
-                        <i class="far fa-clock"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="currentColor"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-62.9V112c0-13.3-10.7-24-24-24s-24 10.7-24 24v176c0 9.2 5.2 17.6 13.3 21.6l99.1 73.4c10.8 8 26.2 5.8 34.2-5 8-10.8 5.8-26.2-5-34.2z"/></svg>
                         <span>24/7</span>
                         <p>Odbiorów i zgłoszeń</p>
                     </div>
@@ -223,8 +219,6 @@
         </div>
     </footer>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
