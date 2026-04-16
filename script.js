@@ -205,99 +205,165 @@ if (contactForm) {
             headerScrollTimeout = null;
         });
     }, { passive: true });
-
-    // Initialize Swiper for Recent Buys
-    if (document.querySelector('.buys-swiper')) {
-        new Swiper('.buys-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-                1200: {
-                    slidesPerView: 4,
-                }
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-        });
-    }
-
-    // Initialize Swiper for Testimonials
-    if (document.querySelector('.testimonials-swiper')) {
-        new Swiper('.testimonials-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                }
-            },
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-        });
-    }
-
-    // Initialize AOS
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 20,
-            disable: false,
-            startEvent: 'DOMContentLoaded'
-        });
-
-        // Optymalizacja wyzwalania AOS - używamy requestAnimationFrame i throttlingu
-        let scrollTimeout;
-        const triggerAOS = () => {
-            if (scrollTimeout) return;
-
-            scrollTimeout = requestAnimationFrame(() => {
-                AOS.refresh();
-                const vh = window.innerHeight;
-                document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < vh + 100) {
-                        el.classList.add('aos-animate');
-                    }
-                });
-                scrollTimeout = null;
-            });
-        };
-
-        window.addEventListener('load', triggerAOS);
-        window.addEventListener('scroll', triggerAOS, { passive: true });
-        window.addEventListener('touchstart', triggerAOS, { passive: true });
-
-        // Wykonaj kilka razy po załadowaniu, aby upewnić się, że wszystko jest na miejscu
-        [200, 1000].forEach(delay => {
-            setTimeout(triggerAOS, delay);
-        });
-    }
 });
+
+// Custom Slider Logic
+function initCustomSlider(sliderSelector) {
+    const slider = document.querySelector(sliderSelector);
+    if (!slider) return;
+
+    const track = slider.querySelector('.slider-track');
+    const items = slider.querySelectorAll('.slider-item');
+    const pagination = slider.querySelector('.slider-pagination');
+    const prevBtn = slider.querySelector('.slider-prev');
+    const nextBtn = slider.querySelector('.slider-next');
+
+    if (!track || items.length === 0) return;
+
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    function getItemsInView() {
+        return Math.round(track.offsetWidth / items[0].offsetWidth);
+    }
+
+    function getMaxIndex() {
+        return Math.max(0, items.length - getItemsInView());
+    }
+
+    // Create dots
+    function createPagination() {
+        if (!pagination) return;
+        pagination.innerHTML = '';
+        const maxIndex = getMaxIndex();
+        for (let i = 0; i <= maxIndex; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('slider-dot');
+            if (i === currentIndex) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => {
+                stopAutoplay();
+                scrollTo(i);
+                startAutoplay();
+            });
+            pagination.appendChild(dot);
+        }
+    }
+
+    function updatePagination(index) {
+        if (!pagination) return;
+        const dots = pagination.querySelectorAll('.slider-dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    function scrollTo(index) {
+        const maxIndex = getMaxIndex();
+        if (index < 0) index = maxIndex;
+        if (index > maxIndex) index = 0;
+
+        currentIndex = index;
+        const scrollAmount = items[currentIndex].offsetLeft;
+        track.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+        updatePagination(currentIndex);
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            stopAutoplay();
+            scrollTo(currentIndex - 1);
+            startAutoplay();
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            stopAutoplay();
+            scrollTo(currentIndex + 1);
+            startAutoplay();
+        });
+    }
+
+    // Update index on scroll
+    let scrollTimeout;
+    track.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const index = Math.round(track.scrollLeft / items[0].offsetWidth);
+            const maxIndex = getMaxIndex();
+            const newIndex = Math.min(index, maxIndex);
+            if (newIndex !== currentIndex) {
+                currentIndex = newIndex;
+                updatePagination(currentIndex);
+            }
+        }, 100);
+    }, { passive: true });
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+            scrollTo(currentIndex + 1);
+        }, 5000);
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    createPagination();
+    startAutoplay();
+
+    window.addEventListener('resize', () => {
+        createPagination();
+        scrollTo(currentIndex);
+    });
+
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
+    slider.addEventListener('touchstart', stopAutoplay, { passive: true });
+    slider.addEventListener('touchend', startAutoplay, { passive: true });
+}
+
+// Custom Animation Logic (AOS replacement)
+function initCustomAOS() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.getAttribute('data-aos-delay') || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('aos-animate');
+                }, delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('[data-aos-custom]').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Initialize custom components
+document.addEventListener('DOMContentLoaded', () => {
+    initCustomSlider('.testimonials-slider');
+    initCustomSlider(".buys-slider");
+    initCustomAOS();
+});
+
+// Final optimizations
+(function() {
+    // Defer non-critical CSS
+    window.addEventListener('load', () => {
+        const links = document.querySelectorAll('link[media="print"]');
+        links.forEach(link => {
+            link.media = 'all';
+        });
+    });
+})();

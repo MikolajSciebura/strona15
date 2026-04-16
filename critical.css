@@ -374,3 +374,18 @@ nav a {
         max-width: 320px;
     }
 }
+
+/* Custom Slider & AOS (added to critical for better LCP/CLS) */
+.custom-slider { position: relative; width: 100%; overflow: hidden; }
+.slider-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.slider-track::-webkit-scrollbar { display: none; }
+.slider-item { flex: 0 0 100%; scroll-snap-align: start; padding: 10px; }
+@media (min-width: 768px) { .slider-item { flex: 0 0 50%; } }
+@media (min-width: 1024px) { .slider-item { flex: 0 0 33.333%; } }
+
+[data-aos-custom] { opacity: 0; transition: transform 0.8s ease-out, opacity 0.8s ease-out; will-change: transform, opacity; }
+[data-aos-custom="fade-up"] { transform: translateY(30px); }
+[data-aos-custom="fade-right"] { transform: translateX(-30px); }
+[data-aos-custom="fade-left"] { transform: translateX(30px); }
+[data-aos-custom="zoom-in"] { transform: scale(0.9); }
+[data-aos-custom].aos-animate { opacity: 1; transform: translate(0, 0) scale(1); }
