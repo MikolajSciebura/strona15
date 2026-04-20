@@ -38,18 +38,18 @@
 }
 </script>
 
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="critical.css">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
-    <link rel="preload" as="style" href="style.css">
+
+
+    <noscript></noscript>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="font-awesome.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="font-awesome.min.css"></noscript>
+
+    <noscript></noscript>
     <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- NOWE -->
     <link rel="preload" as="image" href="tlo.webp" fetchpriority="high" type="image/webp">
 
@@ -64,6 +64,346 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicony/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicony/favicon-512x512.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicony/favicon-180x180.png">
+<style>/* style.css - Optimized Version */
+
+:root {
+    --primary-color: #ff9800;
+    --secondary-color: #0b132b;
+    --accent-color: #1c2541;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-dark: #0b132b;
+    --bg-light: #f4f4f4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--bg-dark);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #0b132b;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: padding 0.3s ease, background 0.3s ease;
+    padding: 15px 0;
+}
+
+header.scrolled {
+    padding: 5px 0;
+    background: rgba(11, 19, 43, 0.95);
+}
+
+.top-bar .container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    max-width: 100%;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-height: 60px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+nav a:hover, nav a.active { color: var(--primary-color); }
+
+.header-cta { display: flex; gap: 10px; justify-content: flex-end; }
+.mobile-only { display: none; }
+
+.btn-call {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    background: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.btn-label { display: block; font-size: 0.7rem; opacity: 0.9; }
+.btn-number { display: block; font-size: 1rem; }
+
+.menu-toggle {
+    display: none;
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--primary-color);
+    position: absolute;
+    left: 8px;
+    transition: 0.3s;
+}
+
+.menu-toggle span:nth-child(1) { top: 14px; }
+.menu-toggle span:nth-child(2) { top: 21px; }
+.menu-toggle span:nth-child(3) { top: 28px; }
+
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg); top: 21px; }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg); top: 21px; }
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.8)), url('tlo.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text { text-align: center; width: 100%; }
+.hero-text h1 {
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-text .highlight { color: var(--primary-color); }
+
+.hero-subtext {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+.btn-hero-call {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+.btn-hero-call:hover { background: #e68a00; transform: translateY(-2px); }
+
+/* Service Boxes */
+.service-boxes { margin-top: -50px; position: relative; z-index: 10; }
+.service-boxes .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.box { padding: 40px; border-radius: 10px; display: flex; align-items: center; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.blue-box { background: var(--accent-color); }
+.orange-box { background: var(--primary-color); color: white; }
+
+.box-icon { font-size: 3rem; }
+.box-icon svg { width: 1em; height: 1em; fill: currentColor; }
+
+.btn-outline {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-outline:hover { background: var(--primary-color); color: white; }
+
+/* Benefits */
+.benefits { padding: 80px 0; background: #050a18; }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; position: relative; }
+.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary-color); margin: 15px auto; }
+
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.benefit-item {
+    background: var(--accent-color);
+    padding: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.benefit-item:hover { transform: translateY(-10px); }
+.benefit-item svg { width: 50px; height: 50px; fill: var(--primary-color); margin-bottom: 20px; }
+
+/* SEO Content */
+.seo-content { padding: 80px 0; }
+.seo-text-block h2 { color: var(--primary-color); margin-bottom: 20px; }
+.seo-text-block p { margin-bottom: 20px; color: #ccc; }
+.seo-text-block ul { list-style: none; margin-bottom: 20px; }
+.seo-text-block li { margin-bottom: 10px; position: relative; padding-left: 25px; }
+.seo-text-block li::before { content: '✔'; position: absolute; left: 0; color: var(--primary-color); }
+
+/* How It Works */
+.how-it-works { padding: 80px 0; background: #050a18; }
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.step { background: var(--accent-color); padding: 40px; border-radius: 10px; text-align: center; }
+.step-num {
+    width: 50px; height: 50px; background: var(--primary-color); color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px;
+}
+
+/* Slider (Native) */
+.custom-slider { position: relative; width: 100%; overflow: hidden; padding: 20px 0; }
+.slider-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    gap: 20px;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+
+.slider-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+
+@media (min-width: 768px) { .slider-item { flex: 0 0 calc(50% - 10px); } }
+@media (min-width: 1024px) { .slider-item { flex: 0 0 calc(33.333% - 14px); } }
+
+.testimonial { background: var(--accent-color); padding: 30px; border-radius: 10px; height: 100%; border-left: 4px solid var(--primary-color); }
+.stars { color: var(--primary-color); margin-bottom: 15px; }
+
+.slider-pagination { display: flex; justify-content: center; gap: 10px; margin-top: 30px; }
+.slider-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; border: none; transition: 0.3s; }
+.slider-dot.active { background: var(--primary-color); transform: scale(1.2); }
+
+/* FAQ */
+.faq { padding: 80px 0; background: #050a18; }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.faq-item h4 { color: var(--primary-color); margin-bottom: 10px; }
+
+/* Footer */
+footer { background: #050a18; padding: 60px 0 20px; border-top: 3px solid var(--primary-color); }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-info p { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.footer-info svg { width: 18px; height: 18px; fill: var(--primary-color); }
+
+.hours-box { background: var(--primary-color); padding: 20px; border-radius: 10px; text-align: center; }
+.hours-box span { display: block; font-size: 2rem; font-weight: 700; font-family: 'Oswald', sans-serif; }
+
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #888; }
+
+/* Subpages */
+.page-header { padding: 60px 0; text-align: center; }
+.page-header h1 { font-size: 3rem; margin-bottom: 10px; }
+.page-header p { color: var(--primary-color); font-size: 1.2rem; }
+
+.about-grid, .service-grid, .tow-grid, .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; padding: 60px 0; }
+.stat-item { background: var(--accent-color); padding: 30px; border-radius: 10px; text-align: center; border-bottom: 3px solid var(--primary-color); }
+.stat-item strong { display: block; font-size: 2.5rem; color: var(--primary-color); font-family: 'Oswald', sans-serif; }
+
+.check-list { list-style: none; margin: 20px 0; }
+.check-list li { margin-bottom: 10px; }
+
+.hero-form-box { background: var(--accent-color); padding: 30px; border-radius: 15px; border: 1px solid rgba(255, 152, 0, 0.2); }
+.form-group { margin-bottom: 15px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05); color: white;
+}
+
+.btn-submit {
+    width: 100%; padding: 15px; background: var(--primary-color); color: white;
+    border: none; border-radius: 8px; font-family: 'Oswald', sans-serif; font-weight: 700;
+    cursor: pointer; text-transform: uppercase;
+}
+
+/* Animations */
+[data-aos-custom] { opacity: 0; transition: 0.8s ease-out; }
+[data-aos-custom="fade-up"] { transform: translateY(30px); }
+[data-aos-custom="fade-right"] { transform: translateX(-30px); }
+[data-aos-custom="fade-left"] { transform: translateX(30px); }
+[data-aos-custom="zoom-in"] { transform: scale(0.9); }
+[data-aos-custom].aos-animate { opacity: 1; transform: translate(0, 0) scale(1); }
+
+/* Responsive Mobile */
+@media (max-width: 1100px) {
+    .desktop-only { display: none; }
+    .mobile-only { display: flex; }
+    .menu-toggle { display: block; z-index: 2200; }
+
+    nav {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+        background: var(--bg-dark); padding-top: 100px;
+        flex-direction: column; align-items: center;
+        transform: translateY(-100%); transition: 0.5s; z-index: 2100;
+    }
+    nav.active { transform: translateY(0); }
+    nav ul { flex-direction: column; align-items: center; }
+    nav a { font-size: 1.5rem; }
+
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; display: none; }
+    .overlay.active { display: block; }
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 60px 0; min-height: 500px; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-cta-buttons { flex-direction: column; align-items: center; }
+    .btn-hero-call { width: 100%; max-width: 320px; justify-content: center; }
+}
+</style>
 </head>
 <body>
     <header>
@@ -84,14 +424,14 @@
                     </ul>
                     <div class="header-cta mobile-only">
                         <a href="tel:+48730035559" class="btn-call">
-                            <i class="fas fa-phone-alt"></i>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             <span>
                                 <span class="btn-label">SKUP SAMOCHODÓW</span>
                                 <span class="btn-number">730 035 559</span>
                             </span>
                         </a>
                         <a href="tel:+48790676446" class="btn-call">
-                            <i class="fas fa-phone-alt"></i>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             <span>
                                 <span class="btn-label">POMOC DROGOWA</span>
                                 <span class="btn-number">790 676 446</span>
@@ -101,14 +441,14 @@
                 </nav>
                 <div class="header-cta desktop-only">
                     <a href="tel:+48730035559" class="btn-call">
-                        <i class="fas fa-phone-alt"></i>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <span>
                             <span class="btn-label">SKUP SAMOCHODÓW</span>
                             <span class="btn-number">730 035 559</span>
                         </span>
                     </a>
                     <a href="tel:+48790676446" class="btn-call">
-                        <i class="fas fa-phone-alt"></i>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <span>
                             <span class="btn-label">POMOC DROGOWA</span>
                             <span class="btn-number">790 676 446</span>
@@ -136,7 +476,7 @@
         <div class="container">
             <div class="contact-grid">
                 
-                <div class="contact-form-section" data-aos="fade-right">
+                <div class="contact-form-section" class="animate-on-scroll">
                     <h3>WYŚLIJ WIADOMOŚĆ</h3>
                     <form id="contact-form" class="full-contact-form" method="post" action="send.php">
 
@@ -175,24 +515,24 @@
     <div id="form-message" class="form-message"></div>
 </form>
                 </div>
-                <div class="contact-details" data-aos="fade-left">
+                <div class="contact-details" class="animate-on-scroll">
                     <h3>DANE KONTAKTOWE</h3>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         <div>
                             <h4>Siedziba firmy:</h4>
                             <p>Częstochowa, Śląskie i okolice</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <div>
                             <h4>Skup Samochodów (24h):</h4>
                             <p>730 035 559</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         <div>
                             <h4>Pomoc Drogowa (24h):</h4>
                             <p>790 676 446</p>
@@ -207,9 +547,9 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Częstochowa, Śląsk i okolice</p>
-                    <p><i class="fas fa-phone"></i> Skup samochodów: 730 035 559</p>
-                    <p><i class="fas fa-phone"></i> Pomoc Drogowa: 790 676 446</p>
+                    <p><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Częstochowa, Śląsk i okolice</p>
+                    <p><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Skup samochodów: 730 035 559</p>
+                    <p><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Pomoc Drogowa: 790 676 446</p>
                 </div>
                 <div class="footer-links">
                     <ul>
@@ -219,7 +559,7 @@
                 </div>
                 <div class="footer-hours">
                     <div class="hours-box">
-                        <i class="far fa-clock"></i>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         <span>24/7</span>
                         <p>Odbiorów i zgłoszeń</p>
                     </div>
@@ -232,7 +572,7 @@
     </footer>
 
     <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
